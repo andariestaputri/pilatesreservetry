@@ -32,18 +32,18 @@
 
   <section id="booking" class="content">
     <h3>Book Your Class</h3>
-    <form id="bookingForm">
-      <input type="text" name="name" placeholder="Full Name" required />
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="date" name="date" required />
-      <select name="package" required>
-        <option value="">Select Package</option>
-        <option value="1">One Time Class</option>
-        <option value="5">5 Sessions Package</option>
-        <option value="10">10 Sessions Package</option>
-      </select>
-      <button type="submit">Submit Booking</button>
-    </form>
+  <form id="bookingForm" action="https://hooks.zapier.com/hooks/catch/xxxxxx/xxxxxx" method="POST">
+  <input type="text" name="name" placeholder="Full Name" required />
+  <input type="email" name="email" placeholder="Email" required />
+  <input type="date" name="date" required />
+  <select name="package" required>
+    <option value="">Select Package</option>
+    <option value="1">One Time Class</option>
+    <option value="5">5 Sessions Package</option>
+    <option value="10">10 Sessions Package</option>
+  </select>
+  <button type="submit">Submit Booking</button>
+</form>
   </section>
 
   <section id="contact" class="content">
