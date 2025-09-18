@@ -32,18 +32,26 @@
 
   <section id="booking" class="content">
     <h3>Book Your Class</h3>
-  <form id="bookingForm" action="https://hooks.zapier.com/hooks/catch/xxxxxx/xxxxxx" method="POST">
-  <input type="text" name="name" placeholder="Full Name" required />
-  <input type="email" name="email" placeholder="Email" required />
-  <input type="date" name="date" required />
-  <select name="package" required>
-    <option value="">Select Package</option>
-    <option value="1">One Time Class</option>
-    <option value="5">5 Sessions Package</option>
-    <option value="10">10 Sessions Package</option>
-  </select>
-  <button type="submit">Submit Booking</button>
+<form id="bookingForm">
+  <label for="name">Nama:</label>
+  <input type="text" id="name" name="name" required><br><br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" required><br><br>
+
+  <label for="class">Kelas:</label>
+  <select id="class" name="class">
+    <option value="Pilates Mat">Pilates Mat</option>
+    <option value="Pilates Reformer">Pilates Reformer</option>
+  </select><br><br>
+
+  <label for="schedule">Jadwal:</label>
+  <input type="datetime-local" id="schedule" name="schedule" required><br><br>
+
+  <button type="submit">Submit</button>
 </form>
+
+<p id="statusMsg"></p>
   </section>
 
   <section id="contact" class="content">
