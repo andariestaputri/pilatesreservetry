@@ -1,6 +1,15 @@
 document.getElementById("bookingForm").addEventListener("submit", async function(e) {
   e.preventDefault(); // biar gak reload
 
+   const submitBtn = document.getElementById("submitBtn");
+  const statusMsg = document.getElementById("statusMsg");
+
+  // set loading state
+  submitBtn.disabled = true;
+  submitBtn.innerText = "Sending...";
+  statusMsg.style.color = "blue";
+  statusMsg.innerText = "⏳ Sedang mengirim booking...";
+
   const data = {
     name: document.getElementById("name").value,
     email: document.getElementById("email").value,
@@ -18,12 +27,19 @@ document.getElementById("bookingForm").addEventListener("submit", async function
     });
 
     if (response.ok) {
-      document.getElementById("statusMsg").innerText = "Booking sent successfully!";
+      statusMsg.style.color = "green";
+      statusMsg.innerText = "✅ Booking berhasil dikirim!";
       document.getElementById("bookingForm").reset();
     } else {
-      document.getElementById("statusMsg").innerText = "Failed to send booking.";
+      statusMsg.style.color = "red";
+      statusMsg.innerText = "❌ Gagal mengirim booking.";
     }
-  } catch (error) {
-    document.getElementById("statusMsg").innerText = "Error sending booking.";
+   } catch (error) {
+    console.error(error);
+    statusMsg.style.color = "red";
+    statusMsg.innerText = "⚠️ Error saat kirim booking.";
+  } finally {
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Submit";
   }
 });
